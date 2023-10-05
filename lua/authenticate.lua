@@ -3,10 +3,13 @@ local opts = {
     redirect_uri  = ngx.var.redirect_uri,
     discovery     = ngx.var.discovery,
     client_id     = ngx.var.client_id,
-    client_secret = ngx.var.client_secret
+    client_secret = ngx.var.client_secret,
+    logout_path   = "/logout"
 }
 
-local res, err = require("resty.openidc").authenticate(opts)
+local res, err, target, session = require("resty.openidc").authenticate(opts)
+session.cookie.persistent = true
+session:save()
 
 if err then
     ngx.log(ngx.ERR, err)
