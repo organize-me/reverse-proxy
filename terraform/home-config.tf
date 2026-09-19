@@ -12,7 +12,7 @@ resource "local_file" "home_nginx_conf" {
     
             add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
             #add_header X-Content-Type-Options nosniff;    # cannot apply now because of open keycloak issue https://issues.redhat.com/browse/KEYCLOAK-17076
-            add_header X-XSS-Protection: "1; mode=block";
+            add_header X-XSS-Protection "1; mode=block";
     
             location / {
                 proxy_set_header        Host $host;
@@ -37,7 +37,7 @@ resource "local_file" "home_nginx_conf" {
     
             add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
             #add_header X-Content-Type-Options nosniff;    # cannot apply now because of open keycloak issue https://issues.redhat.com/browse/KEYCLOAK-17076
-            add_header X-XSS-Protection: "1; mode=block";
+            add_header X-XSS-Protection "1; mode=block";
     
     
             location / {
@@ -65,7 +65,7 @@ resource "local_file" "home_nginx_conf" {
             add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
             add_header Content-Security-Policy "default-src 'self'; frame-ancestors 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src http://auth.${var.domain};";
             #add_header X-Content-Type-Options nosniff;    # cannot apply now because of open keycloak issue https://issues.redhat.com/browse/KEYCLOAK-17076
-            add_header X-XSS-Protection: "1; mode=block";
+            add_header X-XSS-Protection "1; mode=block";
     
             proxy_busy_buffers_size   512k;
             proxy_buffers             4 512k;
@@ -159,7 +159,7 @@ resource "local_file" "home_nginx_conf" {
     
             add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
             #add_header X-Content-Type-Options nosniff;    # cannot apply now because of open keycloak issue https://issues.redhat.com/browse/KEYCLOAK-17076
-            add_header X-XSS-Protection: "1; mode=block";
+            add_header X-XSS-Protection "1; mode=block";
     
     
             location / {
@@ -203,8 +203,7 @@ resource "local_file" "home_nginx_conf" {
     
             add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
             #add_header X-Content-Type-Options nosniff;    # cannot apply now because of open keycloak issue https://issues.redhat.com/browse/KEYCLOAK-17076
-            add_header X-XSS-Protection: "1; mode=block";
-    
+            add_header X-XSS-Protection "1; mode=block";
     
             location = /service_worker.js {
                 return 404;
@@ -250,7 +249,7 @@ resource "local_file" "home_nginx_conf" {
     
             add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
             #add_header X-Content-Type-Options nosniff;    # cannot apply now because of open keycloak issue https://issues.redhat.com/browse/KEYCLOAK-17076
-            add_header X-XSS-Protection: "1; mode=block";
+            add_header X-XSS-Protection "1; mode=block";
     
             location / {
                 proxy_buffering off;
