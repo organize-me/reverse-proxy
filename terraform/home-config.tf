@@ -130,9 +130,9 @@ resource "local_file" "home_nginx_conf" {
             #add_header X-Content-Type-Options nosniff;    # cannot apply now because of open keycloak issue https://issues.redhat.com/browse/KEYCLOAK-17076
             add_header X-XSS-Protection: "1; mode=block";
     
-            location /admin {
-                return 404;
-            }
+#            location /admin {
+#                return 404;
+#            }
     
             location / {
                 proxy_set_header        Host $host;
