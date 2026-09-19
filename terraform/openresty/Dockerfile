@@ -1,4 +1,4 @@
-FROM openresty/openresty:1.27.1.2-0-jammy
+FROM openresty/openresty:1.31.1.1-jammy
 
 # Initalize Volume
 RUN mkdir -p /usr/local/goaccess/logs && \
