@@ -17,11 +17,6 @@ variable "domain" {
   type = string
 }
 
-# build-system domain
-variable "domain_build" {
-  type = string
-}
-
 # Pi-hole
 variable "pihole_client_id" {
   type = string
