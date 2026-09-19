@@ -1,4 +1,4 @@
-FROM openresty/openresty:1.21.4.1-0-jammy
+FROM openresty/openresty:1.27.1.2-0-jammy
 
 # Initalize Volume
 RUN mkdir -p /usr/local/goaccess/logs && \
@@ -14,8 +14,5 @@ COPY lua /usr/local/openresty/nginx/conf/lua
 
 
 # Install OpenID Connect Library & Dependencies
-RUN /usr/local/openresty/luajit/bin/luarocks install lua-resty-http && \
-    /usr/local/openresty/luajit/bin/luarocks install lua-resty-session && \
-    /usr/local/openresty/luajit/bin/luarocks install lua-resty-jwt && \
-    /usr/local/openresty/luajit/bin/luarocks install lua-resty-openidc
-
+RUN opm get bungle/lua-resty-session && \
+    opm get burnes/lua-resty-openidc
