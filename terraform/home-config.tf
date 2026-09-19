@@ -7,7 +7,7 @@ resource "local_file" "home_nginx_conf" {
             listen 443 ssl;
             ssl_certificate     /etc/letsencrypt/live/${var.domain}/fullchain.pem;
             ssl_certificate_key /etc/letsencrypt/live/${var.domain}/privkey.pem;
-            ssl_protocols       TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+            ssl_protocols       TLSv1.2 TLSv1.3;
             ssl_ciphers         HIGH:!aNULL:!MD5;
     
             add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
@@ -32,7 +32,7 @@ resource "local_file" "home_nginx_conf" {
             listen 443 ssl;
             ssl_certificate     /etc/letsencrypt/live/${var.domain}/fullchain.pem;
             ssl_certificate_key /etc/letsencrypt/live/${var.domain}/privkey.pem;
-            ssl_protocols       TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+            ssl_protocols       TLSv1.2 TLSv1.3;
             ssl_ciphers         HIGH:!aNULL:!MD5;
     
             add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
@@ -59,7 +59,7 @@ resource "local_file" "home_nginx_conf" {
             listen 443 ssl;
             ssl_certificate     /etc/letsencrypt/live/${var.domain}/fullchain.pem; # managed by Certbot
             ssl_certificate_key /etc/letsencrypt/live/${var.domain}/privkey.pem; # managed by Certbot
-            ssl_protocols       TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+            ssl_protocols       TLSv1.2 TLSv1.3;
             ssl_ciphers         HIGH:!aNULL:!MD5;
     
             add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
@@ -96,7 +96,7 @@ resource "local_file" "home_nginx_conf" {
             listen 443 ssl; # managed by Certbot
             ssl_certificate     /etc/letsencrypt/live/${var.domain}/fullchain.pem;
             ssl_certificate_key /etc/letsencrypt/live/${var.domain}/privkey.pem;
-            ssl_protocols       TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+            ssl_protocols       TLSv1.2 TLSv1.3;
             ssl_ciphers         HIGH:!aNULL:!MD5;
     
             add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
@@ -123,9 +123,9 @@ resource "local_file" "home_nginx_conf" {
             listen 443 ssl;
             ssl_certificate     /etc/letsencrypt/live/${var.domain}/fullchain.pem;
             ssl_certificate_key /etc/letsencrypt/live/${var.domain}/privkey.pem;
-            ssl_protocols       TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+            ssl_protocols       TLSv1.2 TLSv1.3;
             ssl_ciphers         HIGH:!aNULL:!MD5;
-     
+    
             add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
             #add_header X-Content-Type-Options nosniff;    # cannot apply now because of open keycloak issue https://issues.redhat.com/browse/KEYCLOAK-17076
             add_header X-XSS-Protection: "1; mode=block";
@@ -245,7 +245,7 @@ resource "local_file" "home_nginx_conf" {
             listen 443 ssl;
             ssl_certificate     /etc/letsencrypt/live/${var.domain}/fullchain.pem;
             ssl_certificate_key /etc/letsencrypt/live/${var.domain}/privkey.pem;
-            ssl_protocols       TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+            ssl_protocols       TLSv1.2 TLSv1.3;
             ssl_ciphers         HIGH:!aNULL:!MD5;
     
             add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
