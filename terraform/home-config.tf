@@ -1,6 +1,6 @@
 resource "local_file" "home_nginx_conf" {
   filename = "${var.install_root}/nginx/etc/nginx/conf.d/home.conf"
-  content = <<-EOT
+  content  = <<-EOT
         server {
             server_name snipeit.${var.domain};
     
@@ -36,8 +36,9 @@ resource "local_file" "home_nginx_conf" {
     
             add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
             add_header X-XSS-Protection "1; mode=block";
-    
-    
+
+            proxy_read_timeout 300s;
+
             location / {
                 proxy_set_header        Host $host;
                 proxy_set_header        X-Real-IP $remote_addr;
@@ -325,4 +326,3 @@ resource "local_file" "home_nginx_conf" {
         }
     EOT
 }
-
